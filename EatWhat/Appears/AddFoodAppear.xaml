@@ -1,0 +1,30 @@
+﻿<miaoCore:AppearBase x:Class="EatWhat.Appears.AddFoodAppear"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EatWhat.Appears"
+        xmlns:miaoCore="clr-namespace:MiaoCore;assembly=MiaoCore"
+        mc:Ignorable="d"
+        Title="AddFoodAppear" Height="130" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="5,5,5,0" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Label Content="添加一个吃的"/>
+        </StackPanel>
+
+        <TextBox Grid.Row="1" Text="{Binding AddString}" Margin="5" Height="25" VerticalContentAlignment="Center"/>
+
+        <StackPanel Grid.Row="2" Margin="5,0,5,5" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="添加吃的" Width="70" Click="OnConfirm" HorizontalAlignment="Left"/>
+            <Button Content="不吃了" Width="70" Click="OnCancel" HorizontalAlignment="Right" Margin="5,0,0,0"/>
+        </StackPanel>
+
+    </Grid>
+</miaoCore:AppearBase>
+

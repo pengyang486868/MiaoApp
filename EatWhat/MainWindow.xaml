@@ -1,0 +1,66 @@
+﻿<miaoCore:AppearBase x:Class="EatWhat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EatWhat"
+        xmlns:miaoCore="clr-namespace:MiaoCore;assembly=MiaoCore"
+        mc:Ignorable="d"
+        Title="今天吃啥子 - For MM " Height="250" Width="525" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <local:MainWindowAppearModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Ribbon Grid.Row="0" Margin="0,-22,0,0">
+            <Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar>
+                    <RibbonButton SmallImageSource="Pictures/default.jpg" Command="{Binding Path=StartSelectCmd}"/>
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>
+
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu SmallImageSource="Pictures/sun.png">
+                    <RibbonApplicationMenuItem Header="开始" ImageSource="Pictures/start.png" Command="{Binding Path=StartSelectCmd}"/>
+                    <RibbonApplicationMenuItem Header="我的食谱" ImageSource="Pictures/menu.png" Command="{Binding Path=MyMenuCmd}"/>
+                    <RibbonApplicationMenuItem Header="退出" ImageSource="Pictures/exit.png" Click="OnConfirm"/>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="搞起啊">
+                <RibbonGroup Header="开始/停">
+                    <RibbonButton Label="开始" Command="{Binding Path=StartSelectCmd}" LargeImageSource="Pictures/start.png"/>
+                    <RibbonButton Label="停" Command="{Binding Path=StopSelectCmd}" LargeImageSource="Pictures/stop.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="食谱">
+                    <RibbonButton Label="我的食谱" Command="{Binding Path=MyMenuCmd}" LargeImageSource="Pictures/menu.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="开关">
+                    <RibbonButton Label="关掉我" Click="OnConfirm" LargeImageSource="Pictures/exit.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="关于">
+                <RibbonGroup Header="关于吃啥子">
+                    <RibbonButton Label="这东西是谁做的" Command="{Binding Path=WhoMade}" LargeImageSource="Pictures/kiss.png"/>
+                    <RibbonButton Label="别的要说的" Command="{Binding Path=OtherSay}" LargeImageSource="Pictures/default.jpg"/>
+                </RibbonGroup>
+            </RibbonTab>
+
+        </Ribbon>
+
+        <StackPanel Grid.Row="1" Margin="5,30,5,5" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Label Content="   今天吃！！！——" FontSize="24"/>
+            <Label Content="{Binding EatThis}" FontSize="24" Foreground="{Binding FoodColor}"/>
+        </StackPanel>
+
+
+    </Grid>
+</miaoCore:AppearBase>
+
