@@ -14,16 +14,16 @@ namespace EatWhat.AppearModels
 
         public ObservableCollection<string> AllRecords
         {
-            get { return _allRecords; }
-            set { SetProp(ref _allRecords, value); }
+            get => _allRecords;
+            set => SetProp(ref _allRecords, value);
         }
 
         private string _selectedRecord;
 
         public string SelectedRecord
         {
-            get { return _selectedRecord; }
-            set { SetProp(ref _selectedRecord, value); }
+            get => _selectedRecord;
+            set => SetProp(ref _selectedRecord, value);
         }
 
         public MyMenuAppearModel()

@@ -19,23 +19,23 @@ namespace EatWhat
         private string _eatThis;
         public string EatThis
         {
-            get { return _eatThis; }
-            set { SetProp(ref _eatThis, value); }
+            get => _eatThis;
+            set => SetProp(ref _eatThis, value);
         }
 
         private SolidColorBrush _foodColor;
         public SolidColorBrush FoodColor
         {
-            get { return _foodColor; }
-            set { SetProp(ref _foodColor, value); }
+            get => _foodColor;
+            set => SetProp(ref _foodColor, value);
         }
 
         private bool _nowStart;
 
         public bool NowStart
         {
-            get { return _nowStart; }
-            set { SetProp(ref _nowStart, value); }
+            get => _nowStart;
+            set => SetProp(ref _nowStart, value);
         }
 
         private readonly DispatcherTimer _timer;
