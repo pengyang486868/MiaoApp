@@ -22,7 +22,6 @@ namespace DialogAppWindowBase
             wnd.ShowDialog();
         }
 
-
         public static void ShowHintWindow(string str)
         {
             var hwin = new HintWindow()

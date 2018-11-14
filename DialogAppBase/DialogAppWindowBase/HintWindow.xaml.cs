@@ -32,7 +32,7 @@ namespace DialogAppWindowBase
                 To = 0.2,
                 Duration = new Duration(TimeSpan.FromSeconds(3))
             };
-            BeginAnimation(OpacityProperty, animt);
+            TxtBlock.BeginAnimation(OpacityProperty, animt);
         }
 
         private void Anim_Completed(object sender, EventArgs e)
